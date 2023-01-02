@@ -1,0 +1,94 @@
+:root {
+    --main-bg-color: #abcdef;
+    --display-color: #212121;
+    --equals-btn-color: #ff5722;
+    --math-operation-btn-color: #e0e0e0;
+    --border-color: #9E9E9E;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--main-bg-color);
+    color: var(--display-color);
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+}
+
+.calculator-container {
+    display: grid;
+    grid-template-rows: 70px 0.2fr 0.8fr;
+    width: 350px;
+    border-radius: 10px;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    background-color: black;
+}
+
+#result-display {
+    width: 100%;
+    background-color: var(--display-color);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 15px 20px;
+    font-size: 40px;
+    text-align: right;
+    line-height: 100%;
+}
+
+.math-operations {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 60px;
+}
+
+.numbers-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.numbers {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.numbers-with-equals {
+    display: grid;
+    grid-template-columns: 0.75fr 0.25fr;
+    height: 240px;
+}
+
+.equals-btn {
+    background-color: var(--equals-btn-color);
+    border-radius: 0 0 10px 0;
+}
+
+.math-operations > button {
+    background-color: var(--math-operation-btn-color);
+}
+
+button {
+    background-color: white;
+}
+
+.numbers-row:not(:last-child) button, .math-operations button:not(:last-child){
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.numbers-row:last-child button {
+    border-right: 1px solid var(--border-color);
+}
+
+.math-operations button:last-child {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.numbers-row:last-of-type button:first-of-type {
+    border-radius: 0 0 0 10px;
+}
+
+button:active {
+    opacity: 0.8;
+}
