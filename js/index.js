@@ -22,12 +22,11 @@ for (let i = 0; i < buttons.length; i++) {
         });
     } else if (operations.includes(button.textContent)) {
         button.addEventListener('click', () => {
-            if (button.textContent === '−' && firstNumber === '') {
-                firstNumber = '-';
-                display.textContent = firstNumber;
-            } else if (firstNumber !== '' && operation && secondNumber === '') {
+            console.log(firstNumber);
+            if (button.textContent === '−' && firstNumber !== '' && operation && secondNumber === '') {
                 secondNumber = '-';
                 display.textContent = secondNumber;
+                console.log('b');
             } else {
                 operation = button.textContent;
                 firstNumber = display.textContent;
